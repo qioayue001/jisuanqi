@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算器的实现</title>
+</head>
+<style type="text/css">
+    #sDiv {/* 外部 */
+        text-align: center;/* 字体居中 */
+        border: solid 1px;/* 边框 */
+        width: 300px;/* 宽 */
+        background-color: aqua;/* 背景颜色 */
+        margin: 20px auto;/* 外延边距补白（四边） */
+    }
+    #t {/* 输入显示框 */
+        border: solid 1px;
+        width: 260px;
+        margin-top: 10px;/* 顶边 */
+        margin-bottom: 10px;/* 底边 */
+        font-size: 20px;
+    }
+    input[type=button] {/* 按钮 */
+        width: 55px;
+        height: 30px;
+        margin: 2px;
+        font-size: 20px;/* 大小 */
+    }
+     #equ {/* 等于框 */
+        width: 260px;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+<div id="sDiv">
+    <input type="text" name="t" id="t" value=""/><br/>
+    <input type="button" name="" value="1" onclick="calCulate(this.value)"/><!-- 点1 -->
+    <input type="button" name="" value="2" onclick="calCulate(this.value)"/><!-- 按键 -->
+    <input type="button" name="" value="3" onclick="calCulate(this.value)"/>
+    <input type="button" name="" value="4" onclick="calCulate(this.value)"/><br/>
+    <input type="button" name="" value="5" onclick="calCulate(this.value)"/>
+    <input type="button" name="" value="6" onclick="calCulate(this.value)"/>
+    <input type="button" name="" value="7" onclick="calCulate(this.value)"/>
+    <input type="button" name="" value="8" onclick="calCulate(this.value)"/><br/>
+    <input type="button" name="" value="9" onclick="calCulate(this.value)"/>
+    <input type="button" name="" value="0" onclick="calCulate(this.value)"/>
+    <input type="button" name="" value="." onclick="calCulate(this.value)"/>
+    <input type="button" name="" value="C" onclick="calCulate(this.value)"/><br/>
+    <input type="button" name="" value="+" onclick="calCulate(this.value)"/>
+    <input type="button" name="" value="-" onclick="calCulate(this.value)"/>
+    <input type="button" name="" value="*" onclick="calCulate(this.value)"/>
+    <input type="button" name="" value="/" onclick="calCulate(this.value)"/><br/>
+    <input type="button" name="" id="equ" value="=" onclick="calCulate(this.value)"/>
+</div>
+<script type="text/javascript">
+    function calCulate(val) {/* 定义函数 */
+        console.log("===>",val);/* 这是函数声明方式的自执行的一种写法，结果为 */
+         var num = document.getElementById("t");/* document返回相应对象的引用 */
+        switch (val) {
+            case "=":
+                num.value = eval(num.value);/* 函数计算 */
+                 break;/* return用于结束函数，后面的也不执行了，所以用break */
+             case "C":
+                num.value = "";
+                break;
+             default:
+                num.value = num.value + val;
+                break;
+        }
+      }
+</script>
+</body>
+</html>
